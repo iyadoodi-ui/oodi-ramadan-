@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ramadan Quest Pro</title>
+    <meta name="description" content="Catch the dates and enjoy Ramadan jokes!">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars"></div>
+
+    <nav class="top-nav">
+        <div class="logo">🌙 RAMADAN<span>QUEST</span></div>
+        <div class="lang-switch">
+            <button onclick="toggleLanguage('en')">EN</button>
+            <button onclick="toggleLanguage('ar')">AR</button>
+        </div>
+    </nav>
+    
+    <div class="main-wrapper">
+        <header class="glass-card">
+            <div class="fact-box">
+                <p id="fact-display">"Loading Ramadan vibes..."</p>
+                <div class="header-btns">
+                    <button class="neon-btn" onclick="nextFact()" data-key="nextJoke">NEXT JOKE 😂</button>
+                    <button class="share-btn" onclick="shareJoke()">📲</button>
+                </div>
+            </div>
+        </header>
+
+        <section class="game-area">
+            <div class="arcade-cabinet">
+                <div class="marquee">
+                    <span data-key="gameTitle">DATE COLLECTOR</span>
+                    <span class="score-display">🏆 <span id="highScore">0</span> | <span data-key="scoreLabel">PTS</span>: <span id="scoreVal">0</span></span>
+                </div>
+                
+                <div class="screen-border">
+                    <canvas id="gameCanvas"></canvas>
+                    <div id="overlay" class="overlay">
+                        <h2 id="msg-title" data-key="ready">RAMADAN KAREEM</h2>
+                        <div id="final-stats"></div>
+                        <button class="play-btn" onclick="startGame()" data-key="startBtn">PLAY NOW</button>
+                    </div>
+                </div>
+                
+                <div class="game-footer">
+                    <div class="lives-container"><span data-key="livesLabel">LIVES</span>: <span id="lives">❤️❤️❤️</span></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
